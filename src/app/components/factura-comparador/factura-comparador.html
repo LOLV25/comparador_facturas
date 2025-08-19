@@ -1,0 +1,72 @@
+<!-- Bootstrap y FontAwesome deberían estar cargados -->
+<div class="container-xl mt-4">
+  <!-- Título principal -->
+  <h3 class="fw-bold text-primary mb-4">Comparador Inteligente de Facturas</h3>
+
+  <!-- Botones de carga -->
+  <div class="d-flex gap-3 mb-3">
+    <button class="btn btn-primary btn-lg shadow-sm">Cargar Factura</button>
+    <button id="btnInicioCarga" class="btn btn-outline-primary btn-lg shadow-sm">Inicio de proceso de Carga</button>
+  </div>
+
+  <!-- Selects + íconos de visualización -->
+  <div class="row mb-4">
+    <div class="col d-flex align-items-center gap-2">
+      <select class="form-select">
+        <option>Factura antigua</option>
+      </select>
+      <button class="btn btn-outline-secondary btn-sm" title="Ver factura antigua" aria-label="Ver factura antigua">
+        <i class="fas fa-eye"></i>
+      </button>
+    </div>
+
+    <div class="col d-flex align-items-center gap-2">
+      <select class="form-select">
+        <option>Factura actual</option>
+      </select>
+      <button class="btn btn-outline-secondary btn-sm" title="Ver factura actual" aria-label="Ver factura actual">
+        <i class="fas fa-eye"></i>
+      </button>
+    </div>
+  </div>
+
+  <button class="btn btn-success btn-lg shadow-sm mb-4">Comparar Factura</button>
+
+  <hr class="my-4" />
+
+  <div class="card border-0 shadow-sm mb-3">
+    <div class="card-body">
+      <h5 class="card-title text-secondary">Factura Antigua</h5>
+      <p class="card-text">Factura de Electricidad<br><small>12 de Mayo, 2024</small></p>
+      <img src="assets/factura1.png" class="img-fluid rounded" alt="Factura antigua mayo 2024" />
+    </div>
+  </div>
+
+  <!-- Factura actual -->
+  <div class="card border-0 shadow-sm mb-3">
+    <div class="card-body">
+      <h5 class="card-title text-secondary">Factura Actual</h5>
+      <p class="card-text">Factura de Electricidad<br><small>12 de Junio, 2024</small></p>
+      <img src="assets/factura2.png" class="img-fluid rounded" alt="Factura actual junio 2024" />
+    </div>
+  </div>
+
+  <!-- Resumen de la IA -->
+  <h5 class="fw-bold text-primary mt-4">Resumen de Comparación de la IA</h5>
+  <p>
+    La IA ha analizado tus facturas y ha encontrado que tu consumo de energía ha aumentado un <strong>15%</strong> en comparación con el mes anterior.
+    Esto se debe principalmente al uso del aire acondicionado durante las horas pico...
+  </p>
+
+  <div class="card bg-light border-0 shadow-sm p-3 mb-5 d-flex justify-content-between align-items-center flex-row">
+    <div>
+      <strong>Resumen de la IA</strong><br>
+      <small>Escuchar resumen</small>
+    </div>
+    <button class="btn btn-light" title="Escuchar resumen" aria-label="Escuchar resumen">
+      <i class="fas fa-play-circle fa-2x text-primary"></i>
+    </button>
+  </div>
+</div>
+
+<script src="main.js"></script>
