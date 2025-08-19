@@ -3,7 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+<<<<<<< HEAD
     "comparador-facturas": {
+=======
+    "proyecto_IA": {
+>>>>>>> 711a6f9e29588f997ce63d711e9c94b3eb21d263
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -26,7 +30,10 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+<<<<<<< HEAD
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+=======
+>>>>>>> 711a6f9e29588f997ce63d711e9c94b3eb21d263
               "src/styles.css"
             ]
           },
@@ -58,10 +65,17 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
+<<<<<<< HEAD
               "buildTarget": "comparador-facturas:build:production"
             },
             "development": {
               "buildTarget": "comparador-facturas:build:development"
+=======
+              "buildTarget": "proyecto_IA:build:production"
+            },
+            "development": {
+              "buildTarget": "proyecto_IA:build:development"
+>>>>>>> 711a6f9e29588f997ce63d711e9c94b3eb21d263
             }
           },
           "defaultConfiguration": "development"
@@ -85,7 +99,10 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+<<<<<<< HEAD
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+=======
+>>>>>>> 711a6f9e29588f997ce63d711e9c94b3eb21d263
               "src/styles.css"
             ]
           }
@@ -94,6 +111,10 @@
     }
   },
   "cli": {
+<<<<<<< HEAD
     "analytics": "c4f61fbf-9a99-4622-86ee-391e6714d2d2"
+=======
+    "analytics": "9da65870-ed6e-4a4f-a39a-9d1f41e903ed"
+>>>>>>> 711a6f9e29588f997ce63d711e9c94b3eb21d263
   }
 }
