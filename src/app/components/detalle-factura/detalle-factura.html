@@ -9,11 +9,11 @@
       <!-- Número de factura y fecha -->
       <div class="row mb-4">
         <div class="col-md-6">
-          <h4 class="text-primary">Factura #{{Factura.numero}}</h4>
+          <h4 class="text-primary">Factura #{{factura.numero}}</h4>
         </div>
         <div class="col-md-6 text-md-end">
           <span class="badge bg-info fs-6">
-            {{Factura.fechaEmision | date:'dd/MM/yyyy'}}
+            {{factura.fechaEmision | date:'dd/MM/yyyy'}}
           </span>
         </div>
       </div>
@@ -22,15 +22,15 @@
       <div class="row mb-4">
         <div class="col-md-4 mb-3 mb-md-0">
           <div class="fw-bold text-primary">Proveedor</div>
-          <div>{{Factura.proveedor}}</div>
+          <div>{{factura.proveedor}}</div>
         </div>
         <div class="col-md-4 mb-3 mb-md-0">
           <div class="fw-bold text-primary">RUC</div>
-          <div>{{Factura.ruc}}</div>
+          <div>{{factura.ruc}}</div>
         </div>
         <div class="col-md-4">
           <div class="fw-bold text-primary">Fecha de Emisión</div>
-          <div>{{Factura.fechaEmision | date:'dd/MM/yyyy'}}</div>
+          <div>{{factura.fechaEmision | date:'dd/MM/yyyy'}}</div>
         </div>
       </div>
 
@@ -62,15 +62,15 @@
           <table class="table table-bordered">
             <tr>
               <td class="fw-bold bg-light">Subtotal</td>
-              <td class="text-end">{{formatearMoneda(Factura.subtotal)}}</td>
+              <td class="text-end">{{formatearMoneda(factura.subtotal)}}</td>
             </tr>
             <tr>
               <td class="fw-bold bg-light">IVA (12%)</td>
-              <td class="text-end">{{formatearMoneda(Factura.iva)}}</td>
+              <td class="text-end">{{formatearMoneda(factura.iva)}}</td>
             </tr>
             <tr class="table-success">
               <td class="fw-bold">Total</td>
-              <td class="text-end fw-bold">{{formatearMoneda(Factura.total)}}</td>
+              <td class="text-end fw-bold">{{formatearMoneda(factura.total)}}</td>
             </tr>
           </table>
         </div>
@@ -82,7 +82,7 @@
           <h5 class="mb-0">Datos Estructurados (JSON)</h5>
         </div>
         <div class="card-body p-0">
-          <pre class="m-0 p-3 bg-dark text-light rounded">{{Factura | json}}</pre>
+          <pre class="m-0 p-3 bg-dark text-light rounded">{{factura | json}}</pre>
         </div>
       </div>
 
@@ -104,9 +104,9 @@
           </div>
         </div>
         <div class="card-body">
-          <p class="fst-italic">{{Factura.resumen}}</p>
+          <p class="fst-italic">{{factura.resumen}}</p>
           <div class="text-muted small mt-2" *ngIf="factura.modeloIA && factura.fechaGeneracion">
-            Modelo: {{Factura.modeloIA}} | Generado: {{Factura.fechaGeneracion | date:'dd/MM/yyyy HH:mm'}}
+            Modelo: {{factura.modeloIA}} | Generado: {{factura.fechaGeneracion | date:'dd/MM/yyyy HH:mm'}}
           </div>
         </div>
       </div>

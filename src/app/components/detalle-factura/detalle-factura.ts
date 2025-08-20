@@ -1,30 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Factura } from '../../services/factura';
+import { FacturaService } from '../../services/facturaService';
+import { CommonModule } from '@angular/common';
+import { Factura } from '../../models/factura.model';
 
 @Component({
   selector: 'app-detalle-factura',
+  imports: [CommonModule],
   templateUrl: './detalle-factura.html',
   styleUrls: ['./detalle-factura.css']
 })
-export class DetalleFacturaComponent implements OnInit {
-  Factura: any = null;
+export class DetalleFactura implements OnInit {
+  factura: Factura | null = null;   // aquí guardas los datos de la API
   cargando = true;
   error: string | null = null;
   reproduciendoAudio = false;
-  
 
   constructor(
     private route: ActivatedRoute,
-    private factura: Factura
+    private facturaService: FacturaService   // inyectas el servicio
   ) {}
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.factura.obtenerFactura(id).subscribe({
-        next: (data) => {
-          this.factura = data;
+      this.facturaService.obtenerFactura(id).subscribe({
+        next: (data: Factura) => {
+          this.factura = data;   // guardas los datos en factura
           this.cargando = false;
         },
         error: (err) => {
@@ -40,13 +42,13 @@ export class DetalleFacturaComponent implements OnInit {
   }
 
   reproducirResumen(): void {
-    if (!this.Factura?.resumen) return;
-    
+    if (!this.factura?.resumen) return;
+
     this.reproduciendoAudio = true;
     const synthesis = window.speechSynthesis;
-    const utterance = new SpeechSynthesisUtterance(this.Factura.resumen);
+    const utterance = new SpeechSynthesisUtterance(this.factura.resumen);
     utterance.lang = 'es-ES';
-    
+
     utterance.onend = () => this.reproduciendoAudio = false;
     synthesis.speak(utterance);
   }
@@ -57,7 +59,6 @@ export class DetalleFacturaComponent implements OnInit {
   }
 
   formatearMoneda(valor: number): string {
-    // Formato para Ecuador: separador de miles y decimales con coma
     return valor.toLocaleString('es-EC', {
       style: 'currency',
       currency: 'USD',

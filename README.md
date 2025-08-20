@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 # ComparadorFacturas
-=======
-# ProyectoIA
->>>>>>> 711a6f9e29588f997ce63d711e9c94b3eb21d263
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.4.
 
 ## Development server
 
