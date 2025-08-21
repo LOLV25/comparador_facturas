@@ -5,7 +5,10 @@
 
   <!-- Botones de carga -->
   <div class="d-flex gap-3 mb-3">
-    <button class="btn btn-primary btn-lg shadow-sm">Cargar Factura</button>
+    <!--<button class="btn btn-primary btn-lg shadow-sm">Cargar Factura</button>-->
+    <button class="btn btn-primary btn-lg shadow-sm" (click)="fileInput.click()">Cargar Factura</button>
+<!-- Input file oculto -->
+<input #fileInput type="file" accept=".pdf,.png,.jpg" hidden (change)="onFileSelected($event)" />
     <button id="btnInicioCarga" class="btn btn-outline-primary btn-lg shadow-sm">Inicio de proceso de Carga</button>
   </div>
 
